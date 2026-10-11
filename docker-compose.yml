@@ -1,0 +1,18 @@
+# Opcional: PostgreSQL em container, caso nao exista uma instalacao local.
+# Uso: docker compose up -d   (o banco/tabelas sao criados pelo pipeline)
+services:
+  postgres:
+    image: postgres:16
+    container_name: pi_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-projeto_integrador}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

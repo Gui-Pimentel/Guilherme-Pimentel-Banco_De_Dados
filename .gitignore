@@ -1,0 +1,18 @@
+# segredos e ambiente
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# artefatos regeneraveis pelo pipeline
+data/raw/*.csv
+data/raw/*.json
+data/processed/
+models/*.joblib
+
+# enunciado da disciplina
+BDED-*.pdf
+BDED-2026.1_ PROJETO INTEGRADOR _ MAIS CURSOS.pdf

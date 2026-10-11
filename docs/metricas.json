@@ -1,0 +1,173 @@
+{
+  "modelo_selecionado": "gradient_boosting",
+  "criterio_selecao": "maior F1 medio na validacao cruzada (GroupKFold por cliente, k=5), excluindo o baseline",
+  "treino": {
+    "linhas": 3996,
+    "clientes": 2329,
+    "snapshots": [
+      "2025-03-31",
+      "2025-06-30"
+    ],
+    "taxa_churn": 0.2955455455455455
+  },
+  "teste": {
+    "linhas": 2187,
+    "snapshot": "2025-09-30",
+    "taxa_churn": 0.3004115226337449
+  },
+  "validacao_cruzada": [
+    {
+      "modelo": "gradient_boosting",
+      "f1_media": 0.6016,
+      "roc_auc_media": 0.8054,
+      "accuracy_media": 0.7975,
+      "f1_desvio": 0.0231,
+      "roc_auc_desvio": 0.0168,
+      "accuracy_desvio": 0.015
+    },
+    {
+      "modelo": "regressao_logistica",
+      "f1_media": 0.5939,
+      "roc_auc_media": 0.8113,
+      "accuracy_media": 0.797,
+      "f1_desvio": 0.024,
+      "roc_auc_desvio": 0.0232,
+      "accuracy_desvio": 0.0165
+    },
+    {
+      "modelo": "random_forest",
+      "f1_media": 0.5849,
+      "roc_auc_media": 0.8171,
+      "accuracy_media": 0.7965,
+      "f1_desvio": 0.0261,
+      "roc_auc_desvio": 0.018,
+      "accuracy_desvio": 0.0163
+    },
+    {
+      "modelo": "baseline_dummy",
+      "f1_media": 0.0,
+      "roc_auc_media": 0.5,
+      "accuracy_media": 0.7045,
+      "f1_desvio": 0.0,
+      "roc_auc_desvio": 0.0,
+      "accuracy_desvio": 0.0096
+    }
+  ],
+  "teste_por_modelo": [
+    {
+      "modelo": "baseline_dummy",
+      "accuracy": 0.6996,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.3004
+    },
+    {
+      "modelo": "regressao_logistica",
+      "accuracy": 0.8043,
+      "precision": 0.738,
+      "recall": 0.5403,
+      "f1": 0.6239,
+      "roc_auc": 0.8277,
+      "pr_auc": 0.7186
+    },
+    {
+      "modelo": "random_forest",
+      "accuracy": 0.797,
+      "precision": 0.73,
+      "recall": 0.5145,
+      "f1": 0.6036,
+      "roc_auc": 0.827,
+      "pr_auc": 0.7077
+    },
+    {
+      "modelo": "gradient_boosting",
+      "accuracy": 0.7924,
+      "precision": 0.7076,
+      "recall": 0.5266,
+      "f1": 0.6038,
+      "roc_auc": 0.8182,
+      "pr_auc": 0.7013
+    }
+  ],
+  "limiar_escolhido_no_treino": 0.34,
+  "melhor_modelo_teste_limiar_0.5": {
+    "accuracy": 0.7924,
+    "precision": 0.7076,
+    "recall": 0.5266,
+    "f1": 0.6038,
+    "roc_auc": 0.8182,
+    "pr_auc": 0.7013
+  },
+  "melhor_modelo_teste_limiar_otimizado": {
+    "accuracy": 0.7741,
+    "precision": 0.6222,
+    "recall": 0.6317,
+    "f1": 0.6269,
+    "roc_auc": 0.8182,
+    "pr_auc": 0.7013
+  },
+  "matriz_confusao_teste": [
+    [
+      1278,
+      252
+    ],
+    [
+      242,
+      415
+    ]
+  ],
+  "importancia_permutacao_top10": [
+    {
+      "feature": "recencia_dias",
+      "queda_auc": 0.1436,
+      "desvio": 0.0085
+    },
+    {
+      "feature": "nota_media",
+      "queda_auc": 0.0189,
+      "desvio": 0.0037
+    },
+    {
+      "feature": "freq_90d",
+      "queda_auc": 0.0143,
+      "desvio": 0.0016
+    },
+    {
+      "feature": "razao_recencia_intervalo",
+      "queda_auc": 0.0039,
+      "desvio": 0.0023
+    },
+    {
+      "feature": "frequencia_total",
+      "queda_auc": 0.0028,
+      "desvio": 0.0016
+    },
+    {
+      "feature": "intervalo_medio_dias",
+      "queda_auc": 0.0026,
+      "desvio": 0.0016
+    },
+    {
+      "feature": "pct_fim_de_semana",
+      "queda_auc": 0.002,
+      "desvio": 0.0013
+    },
+    {
+      "feature": "ticket_medio",
+      "queda_auc": 0.0018,
+      "desvio": 0.001
+    },
+    {
+      "feature": "valor_total",
+      "queda_auc": 0.0017,
+      "desvio": 0.0013
+    },
+    {
+      "feature": "idade",
+      "queda_auc": 0.0016,
+      "desvio": 0.0012
+    }
+  ]
+}

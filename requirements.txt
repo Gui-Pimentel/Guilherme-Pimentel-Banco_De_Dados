@@ -1,0 +1,15 @@
+pandas>=2.2
+numpy
+scikit-learn>=1.4
+sqlalchemy>=2.0
+psycopg2-binary
+requests
+python-dotenv
+joblib
+matplotlib
+seaborn
+jupyter
+nbconvert
+nbformat
+ipykernel
+pytest
